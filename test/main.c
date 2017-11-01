@@ -1,5 +1,5 @@
-#include <stdio.h>
+#include "../src/logger.h"
 
-main() {
-    printf("Hello World!\n");
+int main() {
+    return 0;
 }
