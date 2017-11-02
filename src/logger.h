@@ -2,10 +2,34 @@
 #define LOGGER_H
 
 #include <stdio.h>
+#include <time.h>
 
-struct Logger; // declare a variables
+enum boolean {
+    FALSE,
+    TRUE
+};
+typedef enum boolean boolean;
 
-struct Logger* createLogger();
-void writeLog(int level, char* message);
+enum LogLevel {
+    TRACE = 1,
+    DEBUG,
+    INFO,
+    WARNING,
+    ERROR,
+    FATAL
+};
+
+typedef enum LogLevel LogLevel;
+
+struct LoggerStr {
+    LogLevel preferredLevel; // 0 if none
+    boolean printToConsole;
+    FILE* logFile;
+};
+
+typedef struct LoggerStr Logger;
+
+void setUpLogger(Logger* logger, const char* configFilePath);
+void writeLog(Logger* logger, LogLevel level, const char* message);
 
 #endif // LOGGER_H
