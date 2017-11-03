@@ -29,7 +29,7 @@ struct LoggerStr {
 
 typedef struct LoggerStr Logger;
 
-void setUpLogger(Logger* logger, const char* configFilePath);
+Logger setUpLogger(void);
 void writeLog(Logger* logger, LogLevel level, const char* message);
 
 #endif // LOGGER_H
