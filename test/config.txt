@@ -1,2 +1,0 @@
-target;both
-file;d://c dev/Logger/test/log.txt
