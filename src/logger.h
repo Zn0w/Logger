@@ -24,7 +24,7 @@ typedef enum LogLevel LogLevel;
 struct LoggerStr {
     LogLevel preferredLevel; // 0 if none
     boolean printToConsole;
-    FILE* logFile;
+    const char* logFilePath;
 };
 
 typedef struct LoggerStr Logger;

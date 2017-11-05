@@ -14,10 +14,7 @@ Logger setUpFileLogger(int prefferedLevel, const char* logFilePath) {
 
     logger.printToConsole = FALSE;
     logger.preferredLevel = prefferedLevel;
-
-    logger.logFile = fopen(logFilePath, "w");
-    if (logger.logFile == NULL)
-        printf("Couldn't open the logger file.\n");
+    logger.logFilePath = logFilePath;
 
     return logger;
 }
@@ -27,10 +24,11 @@ Logger setUpFullLogger(int prefferedLevel, const char* logFilePath) {
 
     logger.printToConsole = TRUE;
     logger.preferredLevel = prefferedLevel;
+    logger.logFilePath = logFilePath;
 
-    logger.logFile = fopen(logFilePath, "w");
-    if (logger.logFile == NULL)
-        printf("Couldn't open the logger file.\n");
+    //logger.logFile = fopen(logFilePath, "w");
+    //if (logger.logFile == NULL)
+        //printf("Logger: Couldn't open the logger file.\n");
 
     return logger;
 }
