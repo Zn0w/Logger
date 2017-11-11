@@ -7,6 +7,7 @@ Logger setUpConsoleLogger(int prefferedLevel) {
 
     logger.printToConsole = TRUE;
     logger.preferredLevel = prefferedLevel;
+    logger.logFilePath = "";
 
     return logger;
 }
@@ -28,10 +29,6 @@ Logger setUpFullLogger(int prefferedLevel, const char* logFilePath) {
     logger.preferredLevel = prefferedLevel;
     logger.logFilePath = logFilePath;
 
-    //logger.logFile = fopen(logFilePath, "w");
-    //if (logger.logFile == NULL)
-        //printf("Logger: Couldn't open the logger file.\n");
-
     return logger;
 }
 
@@ -41,26 +38,35 @@ void writeLog(Logger* logger, LogLevel level, const char* message) {
 
     const char* stringLevel;
     if (level == TRACE)
-        stringLevel = "TRACE";
+        stringLevel = "TRACE   ";
     else if (level == DEBUG)
-        stringLevel = "DEBUG";
+        stringLevel = "DEBUG   ";
     else if (level == INFO)
-        stringLevel = "INFO";
+        stringLevel = "INFO    ";
     else if (level == WARNING)
-        stringLevel = "WARNING";
+        stringLevel = "WARNING ";
     else if (level == ERROR)
-        stringLevel = "ERROR";
+        stringLevel = "ERROR   ";
     else if (level == FATAL)
-        stringLevel = "FATAL";
+        stringLevel = "FATAL   ";
     else
         stringLevel = " ";
 
     if (level >= logger->preferredLevel) {
         if (logger->printToConsole == TRUE)
-            printf("%s   %s   %s", stringLevel, message,ctime(&currentTime));
+            printf("%s%s%s", stringLevel, message,ctime(&currentTime));
 
-        //if (logger->logFilePath != "")
-            //writeToFile();
+        if (strcmp(logger->logFilePath, "")) {
+            FILE* logFile = fopen(logger->logFilePath, "a");
+            if (logFile == NULL)
+                printf("Logger: Couldn't open the logger file.\n");
+            else {
+                fputs(stringLevel, logFile);
+                fputs(message, logFile);
+                fputs(ctime(&currentTime), logFile);
+            }
+            fclose(logFile);
+        }
     }
 }
 
