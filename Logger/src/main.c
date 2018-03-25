@@ -1,7 +1,7 @@
 #include "logger.h"
 
 int main() {
-	log("Hello World!!!", 2, "", true);
+	log("Testing...", INFO, "main_log.log", true);
 
 	getchar();
 
