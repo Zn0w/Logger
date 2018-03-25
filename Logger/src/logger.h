@@ -11,14 +11,17 @@ enum LogLevel
 	FATAL
 };
 
+enum boolean
+{
+	false,
+	true
+};
+
 typedef enum LogLevel LogLevel;
+typedef enum boolean boolean;
 
 LogLevel preference = 0;
 
-void console_log(const char*, LogLevel);
-
-void file_log(const char*, LogLevel, const char*);
-
-void log(const char*, LogLevel, const char*);
+void log(const char*, LogLevel, const char*, boolean);
 
 #endif // LOGGER_H
