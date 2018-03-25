@@ -1,0 +1,20 @@
+TRACE   Sun Mar 25 16:53:04     Calling do_test function
+INFO    Sun Mar 25 16:53:04     do_test is started
+DEBUG   Sun Mar 25 16:53:04     Init variables
+DEBUG   Sun Mar 25 16:53:04     Performing multiplication
+INFO    Sun Mar 25 16:53:04     do_test have been performed
+TRACE   Sun Mar 25 16:53:17     Calling do_test function
+INFO    Sun Mar 25 16:53:17     do_test is started
+DEBUG   Sun Mar 25 16:53:17     Init variables
+DEBUG   Sun Mar 25 16:53:17     Performing multiplication
+INFO    Sun Mar 25 16:53:17     do_test have been performed
+TRACE   Sun Mar 25 16:54:31     Calling do_test function
+INFO    Sun Mar 25 16:54:31     do_test is started
+DEBUG   Sun Mar 25 16:54:31     Init variables
+DEBUG   Sun Mar 25 16:54:31     Performing multiplication
+INFO    Sun Mar 25 16:54:31     do_test have been performed
+TRACE   Sun Mar 25 16:54:35     Calling do_test function
+INFO    Sun Mar 25 16:54:35     do_test is started
+DEBUG   Sun Mar 25 16:54:35     Init variables
+DEBUG   Sun Mar 25 16:54:35     Performing multiplication
+INFO    Sun Mar 25 16:54:35     do_test have been performed

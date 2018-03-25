@@ -6,7 +6,7 @@
 
 enum LogLevel
 {
-	TRACE = 1,
+	TRACE,
 	DEBUG,
 	INFO,
 	WARN,
