@@ -23,8 +23,6 @@ enum boolean
 typedef enum LogLevel LogLevel;
 typedef enum boolean boolean;
 
-//LogLevel preference = 0;
-
 void log(const char*, LogLevel, const char*, boolean);
 
 #endif // LOGGER_H
