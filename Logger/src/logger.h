@@ -1,6 +1,9 @@
 #ifndef LOGGER_H
 #define LOGGER_H
 
+#include <stdio.h>
+#include <time.h>
+
 enum LogLevel
 {
 	TRACE = 1,
@@ -20,7 +23,7 @@ enum boolean
 typedef enum LogLevel LogLevel;
 typedef enum boolean boolean;
 
-LogLevel preference = 0;
+//LogLevel preference = 0;
 
 void log(const char*, LogLevel, const char*, boolean);
 

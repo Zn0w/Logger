@@ -1,9 +1,7 @@
-#include <stdio.h>
-
 #include "logger.h"
 
 int main() {
-	printf("Hello World!\n");
+	log("Hello World!!!", 2, "", true);
 
 	getchar();
 
